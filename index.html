@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Critical Path Method</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRITICAL PATH METHOD</h1>
+        </div>
+        <div class="form-container">
+            <form id="cpmForm">
+                <div id="activities">
+                    <div class="activity">
+                        <label for="activityName1">Activity Name:</label>
+                        <input type="text" id="activityName1" name="activityName" required>
+                        <label for="duration1">Duration:</label>
+                        <input type="number" id="duration1" name="duration" required>
+                        <label for="precedence1">Precedence (comma separated):</label>
+                        <input type="text" id="precedence1" name="precedence">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="add-button" onclick="addActivity()">Add Activity</button>
+                    <button type="submit" class="calculate-button">Calculate CPM</button>
+                </div>
+            </form>
+        </div>
+        <div class="table-container">
+            <h2>Activities</h2>
+            <table id="activityTable">
+                <thead>
+                    <tr>
+                        <th>Activity Name</th>
+                        <th>Duration</th>
+                        <th>Precedence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Activities will be added here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="network-container">
+            <h2>Forward Pass</h2>
+            <div id="networkForward"></div>
+            <h2>Backward Pass</h2>
+            <div id="networkBackward"></div>
+        </div>
+        <div id="criticalPath" class="critical-path-container"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
